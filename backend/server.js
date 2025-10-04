@@ -4,14 +4,14 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Conexión a MongoDB
-const dbURI = 'mongodb+srv://a23328061310422_db_user:Party4U@skullgirlsdb.ldgqdxi.mongodb.net/';
+const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI)
   .then(() => console.log('Conectado a MongoDB Atlas'))
   .catch((err) => console.error('Error al conectar a MongoDB:', err));
