@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Skullgirls</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Guía de Skullgirls</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="variantes-buenas">Variantes Recomendadas</a></li>
+                <li><a href="#" data-section="variantes-malas">Variantes No Recomendadas</a></li>
+                <li><a href="#" data-section="combos">Combos</a></li>
+                <li><a href="#" data-section="efectos-positivos">Efectos Positivos</a></li>
+                <li><a href="#" data-section="efectos-negativos">Efectos Negativos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content">
+        <!-- El contenido se cargará aquí dinámicamente -->
+    </main>
+
+    <template id="combo-form-template">
+        <section id="add-combo-section">
+            <h2>Añadir Nuevo Combo</h2>
+            <form id="add-combo-form">
+                <div>
+                    <label for="personaje">Personaje:</label>
+                    <input type="text" id="personaje" name="personaje" required>
+                </div>
+                <div>
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+                </div>
+                <div>
+                    <label for="noRecomendable">No recomendable contra:</label>
+                    <input type="text" id="noRecomendable" name="noRecomendable" required>
+                </div>
+                <div>
+                    <label for="video">Video:</label>
+                    <input type="file" id="video" name="video" accept="video/*" required>
+                </div>
+                <button type="submit">Añadir Combo</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="variante-form-template">
+        <section id="add-variante-section">
+            <h2>Añadir Nueva Variante</h2>
+            <form id="add-variante-form">
+                <div>
+                    <label for="nombre">Nombre de la Variante:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="habilidad">Habilidad:</label>
+                    <textarea id="habilidad" name="habilidad" required></textarea>
+                </div>
+                <div>
+                    <label for="imagen">Imagen:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="esBuena">Tipo de Variante:</label>
+                    <select id="esBuena" name="esBuena" required>
+                        <option value="true">Recomendada</option>
+                        <option value="false">No Recomendada</option>
+                    </select>
+                </div>
+                <button type="submit">Añadir Variante</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="efecto-form-template">
+        <section id="add-efecto-section">
+            <h2>Añadir Nuevo Efecto</h2>
+            <form id="add-efecto-form">
+                <div>
+                    <label for="nombre-efecto">Nombre del Efecto:</label>
+                    <input type="text" id="nombre-efecto" name="nombre" required>
+                </div>
+                <div>
+                    <label for="descripcion-efecto">Descripción:</label>
+                    <textarea id="descripcion-efecto" name="descripcion" required></textarea>
+                </div>
+                <div>
+                    <label for="imagen-efecto">Imagen:</label>
+                    <input type="file" id="imagen-efecto" name="imagen" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="esPositivo">Tipo de Efecto:</label>
+                    <select id="esPositivo" name="esPositivo" required>
+                        <option value="true">Positivo (Buff)</option>
+                        <option value="false">Negativo (Debuff)</option>
+                    </select>
+                </div>
+                <button type="submit">Añadir Efecto</button>
+            </form>
+        </section>
+    </template>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
