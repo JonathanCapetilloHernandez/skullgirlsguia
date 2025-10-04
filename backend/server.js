@@ -12,6 +12,7 @@ app.use(express.json());
 
 // Conexión a MongoDB
 const dbURI = process.env.MONGODB_URI;
+console.log('Intentando conectar a MongoDB...');
 mongoose.connect(dbURI)
   .then(() => console.log('Conectado a MongoDB Atlas'))
   .catch((err) => console.error('Error al conectar a MongoDB:', err));
@@ -30,6 +31,6 @@ app.use(express.static('../'));
 app.use('/videos', express.static(path.join(__dirname, '../videos')));
 
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Servidor corriendo en puerto ${port}`);
 });
